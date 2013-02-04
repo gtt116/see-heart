@@ -19,10 +19,10 @@ logfiles = [f for f in os.listdir(LOG_PATH)
             if f.find(LOG_CPU) != -1 or f.find(LOG_NET) != -1]
 
 for logpath in logfiles:
-    print '--'
-    print 'File: %s' % log.name
-
     real_path = os.path.join(LOG_PATH, logpath)
+
+    print '--'
+    print 'File: %s' % real_path
 
     if logpath.endswith('gz'):
         log = gzip.open(real_path, 'r')
